@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+
+class CartItem extends StatelessWidget {
+  final String id;
+  final double price;
+  final int quantity;
+  final String title;
+  CartItem({this.id, this.price, this.quantity, this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: EdgeInsets.symmetric(
+        vertical: 15,
+        horizontal: 5,
+      ),
+      child: Padding(
+        padding: EdgeInsets.all(5),
+        child: ListTile(
+          leading: CircleAvatar(
+            child: Padding(
+              child: FittedBox(
+                child: Text('$price'),
+              ),
+              padding: EdgeInsets.all(5),
+            ),
+          ),
+          title: Text(title),
+          subtitle: Text('Total: \$${price * quantity}'),
+          trailing: Text('${quantity}x'),
+        ),
+      ),
+    );
+  }
+}
