@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_app/screens/cart_screen.dart';
+import '../screens/cart_screen.dart';
+import '../widgets/side_drawer.dart';
 
 import '../provider/cart.dart';
 import '../widgets/badge.dart';
@@ -60,6 +61,7 @@ class _ProductsOverviewScreenState extends State<ProductsOverviewScreen> {
           ),
         ],
       ),
+      drawer: SideDrawer(),
       body: ProductGrid(showFav),
     );
   }
